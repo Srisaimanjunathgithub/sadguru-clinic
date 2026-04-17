@@ -4,98 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sadguru Clinic | Dr. Dnyanesh Takle</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="top-bar">
-        <div class="container bar-flex">
-            <div class="address-text">
-                <i class="fas fa-map-marker-alt"></i> 
-                <span data-en="Sadguru Clinic, Pune" data-mr="सद्गुरु क्लिनिक, पुणे">Sadguru Clinic, Pune</span>
+    <div class="top-ribbon">
+        <div class="container ribbon-grid">
+            <div class="ribbon-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span data-en="Sadguru Clinic, Main Road, Pune" data-mr="सद्गुरु क्लिनिक, मुख्य रस्ता, पुणे">Sadguru Clinic, Main Road, Pune</span>
             </div>
-            <div class="lang-nav">
-                <button onclick="changeLang('en')" id="btn-en" class="active">English</button>
+            <div class="ribbon-item">
+                <i class="fas fa-clock"></i>
+                <span data-en="9:00 AM — 11:00 PM (Daily)" data-mr="सकाळी ९:०० — रात्री ११:०० (दररोज)">9:00 AM — 11:00 PM (Daily)</span>
+            </div>
+            <div class="lang-pill">
+                <button onclick="changeLang('en')" id="btn-en" class="active">EN</button>
                 <button onclick="changeLang('mr')" id="btn-mr">मराठी</button>
             </div>
         </div>
     </div>
 
-    <header class="main-header">
+    <header class="header-v4">
         <div class="container header-flex">
-            <div class="brand">
-                <div class="logo-wrapper">
-                    <div class="logo-circle">
-                        <i class="fas fa-heartbeat"></i>
-                    </div>
-                    <div class="logo-text">
-                        <div class="logo-main">SADGURU<span>CLINIC</span></div>
-                        <small data-en="YOUR HEALTH, OUR PRIORITY" data-mr="तुमचे आरोग्य, आमची प्राथमिकता">YOUR HEALTH, OUR PRIORITY</small>
+            <div class="brand-identity">
+                <div class="clinic-logo">
+                    <div class="icon-sq"><i class="fas fa-heartbeat"></i></div>
+                    <div class="text-sq">
+                        <h1>SADGURU<span>CLINIC</span></h1>
+                        <p data-en="Multi-Speciality Care" data-mr="मल्टी-स्पेशालिटी केअर">Multi-Speciality Care</p>
                     </div>
                 </div>
             </div>
-            
-            <div class="header-info">
-                <div class="info-block">
-                    <i class="far fa-clock"></i>
-                    <div>
-                        <strong data-en="9:00 AM - 11:00 PM" data-mr="सकाळी ९ - रात्री ११">9:00 AM - 11:00 PM</strong>
-                        <span data-en="Open Daily" data-mr="दररोज उघडे">Open Daily</span>
-                    </div>
+
+            <div class="header-doctors">
+                <div class="doc-card-mini">
+                    <strong>Dr. Dnyanesh Takle</strong>
+                    <span>CCMP, BHMS, PGDEMS</span>
+                    <small>Physician & Surgeon</small>
                 </div>
-                <a href="tel:9923889819" class="cta-call">
+                <div class="doc-card-mini">
+                    <strong>Dr. Prajakta Takle</strong>
+                    <span>BHMS</span>
+                    <small>General Physician</small>
+                </div>
+            </div>
+
+            <div class="header-cta">
+                <a href="tel:9923889819" class="call-action-btn">
                     <i class="fas fa-phone-alt"></i>
-                    <span>99238 89819</span>
+                    <div class="cta-txt">
+                        <span data-en="Emergency Call" data-mr="तातडीचा कॉल">Emergency Call</span>
+                        <strong>99238 89819</strong>
+                    </div>
                 </a>
             </div>
         </div>
     </header>
 
-    <nav class="sticky-nav">
-        <div class="container nav-links">
-            <a href="#general"><i class="fas fa-stethoscope"></i> <span data-en="Physician" data-mr="फिजिशियन">Physician</span></a>
-            <a href="#pediatric"><i class="fas fa-baby"></i> <span data-en="Pediatric" data-mr="बालरोग">Pediatric</span></a>
-            <a href="#lab"><i class="fas fa-vials"></i> <span data-en="Lab Tests" data-mr="लॅब चाचणी">Lab Tests</span></a>
-            <a href="#homeopathy"><i class="fas fa-leaf"></i> <span data-en="Homeopathy" data-mr="होमिओपॅथी">Homeopathy</span></a>
-            <a href="https://wa.me/919923889819" class="nav-wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    <nav class="action-nav">
+        <div class="container nav-wrap">
+            <a href="#services" class="nav-btn"><i class="fas fa-stethoscope"></i> <span data-en="Services" data-mr="आमच्या सेवा">Services</span></a>
+            <a href="#lab" class="nav-btn"><i class="fas fa-vial"></i> <span data-en="Lab Tests" data-mr="लॅब चाचणी">Lab Tests</span></a>
+            <a href="#homeopathy" class="nav-btn"><i class="fas fa-leaf"></i> <span data-en="Homeopathy" data-mr="होमिओपॅथी">Homeopathy</span></a>
+            <a href="#children" class="nav-btn"><i class="fas fa-baby"></i> <span data-en="Pediatric" data-mr="बालरोग">Pediatric</span></a>
+            <a href="https://wa.me/919923889819" class="wa-nav-btn"><i class="fab fa-whatsapp"></i> <span data-en="Chat Now" data-mr="चॅट करा">Chat Now</span></a>
         </div>
     </nav>
 
-    <section class="hero-v3">
-        <div class="container hero-grid">
-            <div class="hero-content">
-                <h1 data-en="Modern Healthcare with a Compassionate Touch" data-mr="आधुनिक वैद्यकीय सेवा, आपलेपणाने">Modern Healthcare with a Compassionate Touch</h1>
-                <div class="doctor-highlight">
-                    <div class="doc-box">
-                        <strong data-en="Dr. Dnyanesh Takle" data-mr="डॉ. ज्ञानेश टाकळे">Dr. Dnyanesh Takle</strong>
-                        <p>CCMP, BHMS, PGDEMS</p>
-                        <span data-en="General Physician & Surgeon" data-mr="फिजिशियन आणि सर्जन">General Physician & Surgeon</span>
-                    </div>
-                    <div class="doc-box">
-                        <strong data-en="Dr. Prajakta Takle" data-mr="डॉ. प्राजक्ता टाकळे">Dr. Prajakta Takle</strong>
-                        <p>BHMS</p>
-                        <span data-en="General Physician" data-mr="जनरल फिजिशियन">General Physician</span>
-                    </div>
+    <section class="hero-v4">
+        <div class="container">
+            <div class="hero-glass">
+                <div class="hero-text">
+                    <span class="status-tag"><i class="fas fa-check-circle"></i> <span data-en="Now Accepting Patients" data-mr="रुग्ण तपासणी सुरू आहे">Now Accepting Patients</span></span>
+                    <h2 data-en="Your Health Is Our Priority" data-mr="तुमचे आरोग्य हीच आमची प्राथमिकता">Your Health Is Our Priority</h2>
+                    <p data-en="Specialized treatment for Fever, Diabetes, BP, and Child Care with onsite Nebulization and Laboratory facilities." data-mr="ताप, मधुमेह, बीपी आणि बालरोगावर तज्ज्ञ उपचार. नेब्युलायझेशन आणि लॅबोरेटरी सुविधा उपलब्ध.">Specialized treatment for Fever, Diabetes, BP, and Child Care with onsite Nebulization and Laboratory facilities.</p>
                 </div>
-            </div>
-            <div class="hero-card">
-                <h3 data-en="Services Available" data-mr="उपलब्ध सेवा">Services Available</h3>
-                <ul class="fac-list">
-                    <li><i class="fas fa-check"></i> Nebulization / नेब्युलायझेशन</li>
-                    <li><i class="fas fa-check"></i> Sugar & BP Checkup</li>
-                    <li><i class="fas fa-check"></i> Pediatric Guidance</li>
-                    <li><i class="fas fa-check"></i> Minor Surgery Consultation</li>
-                </ul>
-                <a href="https://wa.me/919923889819" class="btn-primary-wa">Book via WhatsApp</a>
+                <div class="hero-facilities">
+                    <div class="f-pill">Nebulization</div>
+                    <div class="f-pill">ECG Available</div>
+                    <div class="f-pill">Blood / Urine Test</div>
+                    <div class="f-pill">Minor Surgery</div>
+                </div>
             </div>
         </div>
     </section>
 
     <script>
         function changeLang(lang) {
-            document.querySelectorAll('.lang-nav button').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.lang-pill button').forEach(b => b.classList.remove('active'));
             document.getElementById('btn-' + lang).classList.add('active');
             document.querySelectorAll('[data-en]').forEach(el => {
                 el.innerText = el.getAttribute('data-' + lang);
