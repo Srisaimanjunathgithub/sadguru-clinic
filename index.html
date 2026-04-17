@@ -12,199 +12,177 @@
         .bg-teal-brand { background-color: var(--primary); }
         .lang-hidden { display: none; }
         html { scroll-behavior: smooth; }
-        .nav-link { transition: all 0.3s ease; border-bottom: 2px solid transparent; padding-bottom: 4px; cursor: pointer; }
-        .nav-link:hover { color: var(--primary); border-bottom: 2px solid var(--primary); }
+        .nav-link { transition: all 0.3s ease; cursor: pointer; }
+        /* Mobile Menu Animation */
+        #mobile-menu { transition: transform 0.3s ease-in-out; }
+        .menu-open { transform: translateX(0); }
+        .menu-closed { transform: translateX(100%); }
     </style>
 </head>
-<body id="home" class="bg-white font-sans text-slate-800">
+<body id="home" class="bg-white font-sans text-slate-800 overflow-x-hidden">
 
-    <div class="bg-slate-100 border-b border-slate-200 py-2 px-6 flex justify-between items-center text-[11px] font-bold">
-        <div class="flex items-center gap-6">
-            <a href="tel:9689969058" class="flex items-center gap-2 text-teal-brand hover:text-slate-900 transition">
-                <i class="fas fa-pills text-sm"></i> PHARMACY: 96899 69058
+    <div class="bg-slate-100 border-b border-slate-200 py-2 px-4 md:px-6 flex flex-col md:flex-row justify-between items-center text-[10px] md:text-[11px] font-bold gap-2">
+        <div class="flex items-center gap-4 md:gap-6">
+            <a href="tel:9689969058" class="flex items-center gap-2 text-teal-brand">
+                <i class="fas fa-pills"></i> PHARMACY: 96899 69058
             </a>
-            <span class="hidden md:inline text-slate-300">|</span>
-            <span class="hidden md:inline text-slate-500 uppercase tracking-widest">
-                <i class="fas fa-clock text-teal-brand"></i> 9:00 AM — 11:00 PM
+            <span class="text-slate-500 uppercase">
+                <i class="fas fa-clock text-teal-brand"></i> 9 AM — 11 PM
             </span>
         </div>
         <div class="flex bg-white rounded-lg border border-slate-200 overflow-hidden shadow-sm">
-            <button onclick="setLanguage('en')" id="btn-en" class="px-3 py-1 bg-teal-brand text-white transition">English</button>
-            <button onclick="setLanguage('mr')" id="btn-mr" class="px-3 py-1 hover:bg-slate-50 transition text-slate-600">मराठी</button>
+            <button onclick="setLanguage('en')" id="btn-en" class="px-3 py-1 bg-teal-brand text-white">EN</button>
+            <button onclick="setLanguage('mr')" id="btn-mr" class="px-3 py-1 text-slate-600">मराठी</button>
         </div>
     </div>
 
     <nav class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100 shadow-sm">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#home" class="flex items-center gap-4 group">
-                <div class="w-12 h-12 bg-teal-brand rounded-xl shadow-lg flex items-center justify-center text-white group-hover:scale-105 transition">
-                    <i class="fas fa-hand-holding-medical text-2xl"></i>
+        <div class="container mx-auto px-4 md:px-6 py-3 flex justify-between items-center">
+            <a href="#home" class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-teal-brand rounded-lg shadow flex items-center justify-center text-white">
+                    <i class="fas fa-hand-holding-medical text-xl"></i>
                 </div>
                 <div>
-                    <h1 class="text-xl font-black text-slate-900 leading-none uppercase">Shree Sadguru</h1>
-                    <p class="text-[10px] tracking-[0.2em] text-teal-brand font-black uppercase mt-1">Hospital & Pharmacy</p>
+                    <h1 class="text-lg font-black text-slate-900 leading-none uppercase">Shree Sadguru</h1>
+                    <p class="text-[9px] tracking-wider text-teal-brand font-bold uppercase mt-1">Hospital & Pharmacy</p>
                 </div>
             </a>
 
-            <div class="hidden lg:flex items-center gap-8 font-bold text-slate-600 text-[11px] uppercase tracking-widest">
-                <a href="#all-services" class="nav-link"><span class="lang-en">Services</span><span class="lang-mr lang-hidden">सेवा</span></a>
-                <a href="#doctors" class="nav-link"><span class="lang-en">Doctors</span><span class="lang-mr lang-hidden">डॉक्टर</span></a>
-                <a href="#pharmacy" class="nav-link"><span class="lang-en">Pharmacy</span><span class="lang-mr lang-hidden">फार्मसी</span></a>
-                <a href="#location" class="nav-link"><span class="lang-en">Location</span><span class="lang-mr lang-hidden">पत्ता</span></a>
-                
-                <a href="tel:9923889819" class="bg-teal-brand text-white px-6 py-2.5 rounded-full shadow-md hover:scale-105 transition">
-                    <span class="lang-en">Emergency Call</span><span class="lang-mr lang-hidden">आणीबाणी कॉल</span>
-                </a>
+            <div class="hidden lg:flex items-center gap-6 font-bold text-slate-600 text-[11px] uppercase tracking-widest">
+                <a href="#all-services" class="nav-link">Services</a>
+                <a href="#doctors" class="nav-link">Doctors</a>
+                <a href="#pharmacy" class="nav-link">Pharmacy</a>
+                <a href="#location" class="nav-link">Location</a>
+                <a href="tel:9923889819" class="bg-teal-brand text-white px-5 py-2 rounded-full">Emergency</a>
             </div>
+
+            <button onclick="toggleMenu()" class="lg:hidden text-slate-900 text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </nav>
 
-    <section class="py-20 bg-gradient-to-b from-slate-50 to-white">
-        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
-            <div class="space-y-8">
-                <h2 class="text-5xl lg:text-7xl font-black text-slate-900 leading-tight">
-                    <span class="lang-en">Care You Can <br><span class="text-teal-brand">Trust.</span></span>
-                    <span class="lang-mr lang-hidden">विश्वासार्ह <br><span class="text-teal-brand">आरोग्य सेवा.</span></span>
+    <div id="mobile-menu" class="fixed inset-0 bg-slate-900 z-[60] text-white p-10 translate-x-full lg:hidden">
+        <button onclick="toggleMenu()" class="absolute top-6 right-6 text-3xl">&times;</button>
+        <div class="flex flex-col gap-8 text-xl font-bold uppercase tracking-widest mt-10">
+            <a href="#all-services" onclick="toggleMenu()">Services</a>
+            <a href="#doctors" onclick="toggleMenu()">Doctors</a>
+            <a href="#pharmacy" onclick="toggleMenu()">Pharmacy</a>
+            <a href="#location" onclick="toggleMenu()">Location</a>
+            <hr class="border-slate-700">
+            <a href="tel:9923889819" class="text-teal-brand">Emergency Call</a>
+            <a href="tel:9689969058" class="text-teal-brand">Order Pharmacy</a>
+        </div>
+    </div>
+
+    <section class="py-12 md:py-20 bg-gradient-to-b from-slate-50 to-white">
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
+            <div class="space-y-6 text-center lg:text-left">
+                <h2 class="text-4xl md:text-6xl font-black text-slate-900 leading-tight">
+                    <span class="lang-en">Your Health, <br><span class="text-teal-brand">Our Priority.</span></span>
+                    <span class="lang-mr lang-hidden">तुमचे आरोग्य, <br><span class="text-teal-brand">आमची प्राथमिकता.</span></span>
                 </h2>
-                <div class="flex flex-wrap gap-4">
-                    <a href="tel:9923889819" class="bg-slate-900 text-white p-5 rounded-2xl shadow-xl flex items-center gap-4 hover:bg-teal-brand transition group">
-                        <i class="fas fa-user-md text-2xl text-teal-brand group-hover:text-white"></i>
-                        <div class="text-left">
-                            <p class="text-[10px] font-black uppercase opacity-60">Hospital</p>
-                            <p class="font-bold text-sm lang-en">Doctor Home Visit</p>
-                            <p class="font-bold text-sm lang-mr lang-hidden">डॉक्टर होम व्हिजिट</p>
-                        </div>
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                    <a href="tel:9923889819" class="bg-slate-900 text-white p-4 rounded-xl flex items-center justify-center gap-4">
+                        <i class="fas fa-user-md text-xl text-teal-brand"></i>
+                        <span class="font-bold">Home Visit</span>
                     </a>
-                    <a href="tel:9689969058" class="bg-white border-2 border-slate-100 p-5 rounded-2xl shadow-sm flex items-center gap-4 hover:border-teal-brand transition">
-                        <i class="fas fa-truck text-2xl text-teal-brand"></i>
-                        <div class="text-left">
-                            <p class="text-[10px] font-black uppercase opacity-60">LifeCare</p>
-                            <p class="font-bold text-sm lang-en">Pharmacy Order</p>
-                            <p class="font-bold text-sm lang-mr lang-hidden">फार्मसी ऑर्डर</p>
-                        </div>
+                    <a href="tel:9689969058" class="bg-white border-2 border-slate-100 p-4 rounded-xl flex items-center justify-center gap-4">
+                        <i class="fas fa-truck text-xl text-teal-brand"></i>
+                        <span class="font-bold">Order Meds</span>
                     </a>
                 </div>
             </div>
-            <div class="relative"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800" class="rounded-[4rem] shadow-2xl"></div>
+            <div class="relative px-4 md:px-0">
+                <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800" class="rounded-[2rem] md:rounded-[4rem] shadow-xl">
+            </div>
         </div>
     </section>
 
-    <section id="all-services" class="py-20 bg-white">
+    <section id="all-services" class="py-16 bg-white">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-black text-slate-900 uppercase">
-                    <span class="lang-en">Comprehensive Clinical Services</span>
-                    <span class="lang-mr lang-hidden">सर्वसमावेशक वैद्यकीय सेवा</span>
-                </h2>
-                <div class="h-1 bg-teal-brand w-20 mx-auto mt-4 rounded-full"></div>
-            </div>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="bg-slate-50 p-6 rounded-2xl flex items-center gap-4 border border-slate-100">
-                    <i class="fas fa-user-md text-teal-brand"></i>
-                    <p class="font-bold lang-en">General Physician & Surgery</p>
-                    <p class="font-bold lang-mr lang-hidden">जनरल फिजिशियन आणि सर्जरी</p>
+            <h2 class="text-2xl font-black text-center uppercase mb-10">Clinical Services</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 flex items-center gap-3">
+                    <i class="fas fa-stethoscope text-teal-brand"></i>
+                    <span class="font-bold text-sm">General Physician & Surgeon</span>
                 </div>
-                <div class="bg-slate-50 p-6 rounded-2xl flex items-center gap-4 border border-slate-100">
-                    <i class="fas fa-virus text-teal-brand"></i>
-                    <p class="font-bold lang-en">Dengue & Fever Treatment</p>
-                    <p class="font-bold lang-mr lang-hidden">डेंग्यू आणि ताप उपचार</p>
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 flex items-center gap-3">
+                    <i class="fas fa-thermometer-half text-teal-brand"></i>
+                    <span class="font-bold text-sm">Dengue & Fever Care</span>
                 </div>
-                <div class="bg-slate-50 p-6 rounded-2xl flex items-center gap-4 border border-slate-100">
-                    <i class="fas fa-heartbeat text-teal-brand"></i>
-                    <p class="font-bold lang-en">Hypertension (High BP) Care</p>
-                    <p class="font-bold lang-mr lang-hidden">हायपरटेन्शन (रक्तदाब) काळजी</p>
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 flex items-center gap-3">
+                    <i class="fas fa-heart text-teal-brand"></i>
+                    <span class="font-bold text-sm">Hypertension / High BP</span>
                 </div>
-                <div class="bg-slate-50 p-6 rounded-2xl flex items-center gap-4 border border-slate-100">
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 flex items-center gap-3">
                     <i class="fas fa-allergies text-teal-brand"></i>
-                    <p class="font-bold lang-en">Skin & Fungal Problems</p>
-                    <p class="font-bold lang-mr lang-hidden">त्वचा आणि बुरशीजन्य समस्या</p>
+                    <span class="font-bold text-sm">Skin & Fungal Problems</span>
                 </div>
-                <div class="bg-slate-50 p-6 rounded-2xl flex items-center gap-4 border border-slate-100">
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 flex items-center gap-3">
                     <i class="fas fa-scissors text-teal-brand"></i>
-                    <p class="font-bold lang-en">Hairfall Treatment</p>
-                    <p class="font-bold lang-mr lang-hidden">केस गळतीवर उपचार</p>
+                    <span class="font-bold text-sm">Hairfall Treatment</span>
                 </div>
-                <div class="bg-slate-50 p-6 rounded-2xl flex items-center gap-4 border border-slate-100">
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 flex items-center gap-3">
                     <i class="fas fa-venus text-teal-brand"></i>
-                    <p class="font-bold lang-en">Gynaecological Problems</p>
-                    <p class="font-bold lang-mr lang-hidden">स्त्रीरोग समस्या</p>
+                    <span class="font-bold text-sm">Gynaecological Care</span>
                 </div>
-                <div class="bg-slate-50 p-6 rounded-2xl flex items-center gap-4 border border-slate-100">
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 flex items-center gap-3">
                     <i class="fas fa-baby text-teal-brand"></i>
-                    <p class="font-bold lang-en">Paediatric Treatment</p>
-                    <p class="font-bold lang-mr lang-hidden">बालरोग उपचार</p>
+                    <span class="font-bold text-sm">Paediatric Treatment</span>
                 </div>
-                <div class="bg-slate-50 p-6 rounded-2xl flex items-center gap-4 border border-slate-100">
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-100 flex items-center gap-3">
                     <i class="fas fa-biohazard text-teal-brand"></i>
-                    <p class="font-bold lang-en">Renal (Kidney) Stone Care</p>
-                    <p class="font-bold lang-mr lang-hidden">मुतखडा उपचार</p>
-                </div>
-                <div class="bg-slate-50 p-6 rounded-2xl flex items-center gap-4 border border-slate-100">
-                    <i class="fas fa-house-user text-teal-brand"></i>
-                    <p class="font-bold lang-en">24/7 Doctor Home Visits</p>
-                    <p class="font-bold lang-mr lang-hidden">२४/७ डॉक्टर होम व्हिजिट</p>
+                    <span class="font-bold text-sm">Kidney Stone Care</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="doctors" class="py-20 bg-slate-50">
+    <section id="doctors" class="py-16 bg-slate-50">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-6">
+            <div class="bg-white p-8 rounded-3xl text-center shadow-sm border border-slate-100">
+                <h3 class="text-xl font-black">Dr. Dnyanesh Takle</h3>
+                <p class="text-teal-brand text-xs font-bold uppercase">CCMP, BHMS, PGDEMS</p>
+                <p class="mt-2 text-slate-500 text-sm font-bold">Physician & Surgeon</p>
+            </div>
+            <div class="bg-white p-8 rounded-3xl text-center shadow-sm border border-slate-100">
+                <h3 class="text-xl font-black">Dr. Prajakta Takle</h3>
+                <p class="text-teal-brand text-xs font-bold uppercase">BHMS</p>
+                <p class="mt-2 text-slate-500 text-sm font-bold">General Physician</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pharmacy" class="py-16 bg-white">
         <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-                <div class="bg-white p-10 rounded-[3rem] text-center shadow-sm">
-                    <h3 class="text-2xl font-black text-slate-800">Dr. Dnyanesh Takle</h3>
-                    <p class="text-teal-brand font-black text-xs mt-2 uppercase">CCMP, BHMS, PGDEMS</p>
-                    <p class="mt-4 text-slate-600 font-bold lang-en">General Physician & Surgeon</p>
-                    <p class="mt-4 text-slate-600 font-bold lang-mr lang-hidden">जनरल फिजिशियन आणि सर्जन</p>
-                </div>
-                <div class="bg-white p-10 rounded-[3rem] text-center shadow-sm">
-                    <h3 class="text-2xl font-black text-slate-800">Dr. Prajakta Takle</h3>
-                    <p class="text-teal-brand font-black text-xs mt-2 uppercase">BHMS</p>
-                    <p class="mt-4 text-slate-600 font-bold lang-en">General Physician</p>
-                    <p class="mt-4 text-slate-600 font-bold lang-mr lang-hidden">जनरल फिजिशियन</p>
-                </div>
+            <div class="bg-slate-900 text-white p-10 rounded-[2rem] text-center">
+                <h2 class="text-3xl font-black mb-4">LifeCare Pharmacy</h2>
+                <p class="text-slate-400 mb-6">Home Delivery within Hinjewadi Phase 1</p>
+                <a href="tel:9689969058" class="text-2xl md:text-3xl text-teal-brand font-black">96899 69058</a>
             </div>
         </div>
     </section>
 
-    <section id="pharmacy" class="py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="bg-slate-50 rounded-[4rem] p-12 md:p-20 flex flex-col md:flex-row items-center gap-16 border border-slate-100">
-                <div class="md:w-1/2">
-                    <h2 class="text-4xl font-black text-slate-900 lang-en">LifeCare Pharmacy</h2>
-                    <h2 class="text-4xl font-black text-slate-900 lang-mr lang-hidden">लाइफकेअर फार्मसी</h2>
-                    <p class="mt-4 text-slate-500 font-medium text-lg lang-en">Authentic medicine delivery across Hinjewadi.</p>
-                    <p class="mt-4 text-slate-500 font-medium text-lg lang-mr lang-hidden">हिंजवडीमध्ये औषधांची घरपोच डिलिव्हरी.</p>
-                    <p class="mt-6 text-slate-500 font-medium text-lg">Order: <a href="tel:9689969058" class="text-teal-brand font-black">96899 69058</a></p>
-                </div>
+    <section id="location" class="py-16 bg-white">
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-10">
+            <div>
+                <h2 class="text-2xl font-black uppercase mb-4">Our Location</h2>
+                <p class="text-slate-600 mb-6">Shop No 9, Sakhare Vasti Rd, Hinjawadi Phase 1, Pune 411057</p>
+                <a href="https://maps.google.com" target="_blank" class="bg-teal-brand text-white px-6 py-3 rounded-full font-bold inline-block">GET DIRECTIONS</a>
+            </div>
+            <div class="h-64 rounded-2xl overflow-hidden shadow-lg border">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.3524!2d73.7383!3d18.5912!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDM1JzI4LjMiTiA3M8KwNDQnMTcuOSJF!5e0!3m2!1sen!2sin!4v1650000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
-
-    <section id="location" class="py-24 bg-slate-50">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <h2 class="text-4xl font-black text-slate-900 uppercase mb-8">Visit Us</h2>
-                    <p class="text-slate-600 font-bold">Shop No 9, Sakhare Vasti Rd, Phase 1, Hinjawadi, Pune 411057</p>
-                    <a href="https://maps.google.com/?q=Sadguru+Clinic+Hinjewadi" target="_blank" class="mt-8 inline-block bg-slate-900 text-white px-10 py-4 rounded-full font-bold">GET DIRECTIONS</a>
-                </div>
-                <div class="h-[400px] rounded-[3rem] overflow-hidden shadow-2xl">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.3533411440815!2d73.729910414893!3d18.591014187368593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bbddfed263f3%3A0x3c2c0e14dec9b1fd!2sSADGURU%20CLINIC!5e0!3m2!1sen!2sin!4v1650186000000!5m2!1sen!2sin" 
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-white py-12 border-t border-slate-200">
-        <div class="text-center">
-            <h4 class="text-lg font-black text-slate-900 mb-2 uppercase tracking-widest">Shree Sadguru Hospital & Pharmacy</h4>
-            <p class="text-slate-500 text-[10px] font-black tracking-[0.4em] uppercase">© 2026 Hinjawadi Phase 1, Pune</p>
-        </div>
-    </footer>
 
     <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('translate-x-full');
+        }
+
         function setLanguage(lang) {
             const enEls = document.querySelectorAll('.lang-en'), mrEls = document.querySelectorAll('.lang-mr');
             const bEn = document.getElementById('btn-en'), bMr = document.getElementById('btn-mr');
