@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Sadguru Clinic | Dr. Dnyanesh Takle</title>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -18,8 +18,8 @@
                 <span><i class="fas fa-clock"></i> 9:00 AM - 11:00 PM</span>
             </div>
             <div class="lang-nav">
-                <button onclick="changeLang('en')" id="btn-en" class="active">EN</button>
-                <button onclick="changeLang('mr')" id="btn-mr">मराठी</button>
+                <button onclick="updateLang('en')" id="btn-en" class="active">EN</button>
+                <button onclick="updateLang('mr')" id="btn-mr">मराठी</button>
             </div>
         </div>
     </div>
@@ -35,18 +35,16 @@
                     </div>
                 </div>
             </div>
-
             <div class="doctor-presence">
-                <div class="doc-card-header">
+                <div class="doc-badge">
                     <strong>Dr. Dnyanesh Takle</strong>
-                    <span>CCMP, BHMS, PGDEMS</span>
+                    <span>BHMS, PGDEMS, CCMP</span>
                 </div>
-                <div class="doc-card-header">
-                    <strong>Dr. Prajakta Takle</strong>
-                    <span>BHMS</span>
+                <div class="doc-badge">
+                    <strong>Dr. Prajakta Jadhav-Takle</strong>
+                    <span>BHMS, General Physician</span>
                 </div>
             </div>
-
             <div class="header-action">
                 <a href="tel:9923889819" class="call-pill">
                     <i class="fas fa-phone-alt"></i>
@@ -56,54 +54,104 @@
         </div>
     </header>
 
-    <div class="service-ticker">
-        <div class="ticker-track">
-            <span>✦ NEBULIZATION</span><span>✦ SUGAR & BP CHECK</span><span>✦ CHILD VACCINATION</span><span>✦ MINOR SURGERY</span><span>✦ ECG</span><span>✦ HOMEOPATHY</span>
-            <span>✦ NEBULIZATION</span><span>✦ SUGAR & BP CHECK</span><span>✦ CHILD VACCINATION</span><span>✦ MINOR SURGERY</span><span>✦ ECG</span><span>✦ HOMEOPATHY</span>
+    <section class="facility-section">
+        <div class="container">
+            <h3 class="section-title" data-key="our-facilities">Our Medical Facilities</h3>
+            <div class="facility-grid" id="facility-grid">
+                </div>
         </div>
-    </div>
+    </section>
 
     <section class="feedback-section">
-        <div class="container feedback-layout">
+        <div class="container feedback-wrapper">
             <div class="feedback-intro">
-                <h2>What Our Patients Say</h2>
-                <p>Over 5,000+ happy families treated. We take pride in our patient care and recovery rates.</p>
-                <div class="trust-badge">
-                    <i class="fas fa-star"></i> 4.9/5 Rating on Google
+                <h2 data-key="feedback-title">What Our Patients Say</h2>
+                <div class="accent-line"></div>
+                <p data-key="feedback-sub">Trusted by 5,000+ happy patients. We offer the best healthcare for you and your family.</p>
+                <div class="rating-badge">
+                    <span class="rating-num">4.9</span>
+                    <div class="stars">★★★★★</div>
+                    <small>Google Rating</small>
                 </div>
             </div>
             
-            <div class="feedback-slider-box">
-                <div class="feedback-track">
-                    <div class="f-card"><strong>★★★★★</strong><p>Very good treatment for my child.</p><span>- Rahul S.</span></div>
-                    <div class="f-card"><strong>★★★★★</strong><p>Dr. Dnyanesh explains everything very calmly.</p><span>- Amit P.</span></div>
-                    <div class="f-card"><strong>★★★★★</strong><p>Clinic is very clean and hygienic.</p><span>- Sneha M.</span></div>
-                    <div class="f-card"><strong>★★★★★</strong><p>Best family doctor in this area.</p><span>- Vikas J.</span></div>
-                    <div class="f-card"><strong>★★★★★</strong><p>Reasonable charges and great care.</p><span>- Priya K.</span></div>
-                    <div class="f-card"><strong>★★★★★</strong><p>Open till 11 PM, very helpful in emergency.</p><span>- Santosh D.</span></div>
-                    <div class="f-card"><strong>★★★★★</strong><p>Lab test results were very fast.</p><span>- Mahesh T.</span></div>
-                    <div class="f-card"><strong>★★★★★</strong><p>Homeopathy treatment worked for my skin issue.</p><span>- Anjali R.</span></div>
-                    <div class="f-card"><strong>★★★★★</strong><p>Highly professional doctors.</p><span>- Omkar B.</span></div>
-                    <div class="f-card"><strong>★★★★★</strong><p>Proper diagnosis and effective medicine.</p><span>- Kavita G.</span></div>
-                    <div class="f-card"><strong>★★★★★</strong><p>Very polite staff and great atmosphere.</p><span>- Suresh L.</span></div>
-                    <div class="f-card"><strong>★★★★★</strong><p>Nebulization helped my son instantly.</p><span>- Pooja H.</span></div>
-                    <div class="f-card"><strong>★★★★★</strong><p>Regular sugar checkup here is very easy.</p><span>- Ganpat W.</span></div>
-                    <div class="f-card"><strong>★★★★★</strong><p>Dr. Prajakta is excellent with infants.</p><span>- Manisha P.</span></div>
-                    <div class="f-card"><strong>★★★★★</strong><p>Safe and trustworthy for women health.</p><span>- Sunita Y.</span></div>
-                    <div class="f-card"><strong>★★★★★</strong><p>I recovered from Typhoid very quickly.</p><span>- Rohit N.</span></div>
-                    <div class="f-card"><strong>★★★★★</strong><p>Modern equipment and clean surroundings.</p><span>- Bablu S.</span></div>
-                    <div class="f-card"><strong>★★★★★</strong><p>Best clinic for senior citizens.</p><span>- Vitthal K.</span></div>
-                    <div class="f-card"><strong>★★★★★</strong><p>Effective treatment for chronic cough.</p><span>- Sagar A.</span></div>
-                    <div class="f-card"><strong>★★★★★</strong><p>Great experience every time we visit.</p><span>- Kiran D.</span></div>
-                    <div class="f-card"><strong>★★★★★</strong><p>Very good treatment for my child.</p><span>- Rahul S.</span></div>
-                </div>
+            <div class="feedback-view">
+                <div id="feedback-track" class="feedback-track">
+                    </div>
             </div>
         </div>
     </section>
 
-    <a href="https://wa.me/919923889819" class="wa-float-pill">
-        <i class="fab fa-whatsapp"></i> <span>Chat Now</span>
+    <a href="https://wa.me/919923889819" class="wa-float">
+        <i class="fab fa-whatsapp"></i>
     </a>
 
+    <script>
+        const translations = {
+            en: {
+                "our-facilities": "Our Medical Facilities",
+                "feedback-title": "What Our Patients Say",
+                "feedback-sub": "Trusted by 5,000+ happy patients. We offer the best healthcare for you and your family.",
+                services: [
+                    {n:"ECG", i:"fa-heartbeat"}, {n:"Child Care", i:"fa-baby"}, 
+                    {n:"Homeopathy", i:"fa-leaf"}, {n:"Surgery", i:"fa-procedures"}, 
+                    {n:"Lab Tests", i:"fa-vial"}, {n:"Nebulization", i:"fa-lungs"}, {n:"Sugar Check", i:"fa-tint"}
+                ],
+                feedbacks: [
+                    "Excellent treatment and very professional doctors. Dr. Takle is very helpful.",
+                    "Very clean clinic and the best homeopathic treatment in the area.",
+                    "Prompt service and accurate diagnosis. Highly recommended for families.",
+                    "The doctors listen patiently and provide effective medical care.",
+                    "I am very satisfied with the consultation and medicine provided."
+                ]
+            },
+            mr: {
+                "our-facilities": "आमच्या वैद्यकीय सुविधा",
+                "feedback-title": "रुग्णांचे अभिप्राय",
+                "feedback-sub": "५,०००+ हून अधिक समाधानी रुग्ण. आम्ही तुमच्या कुटुंबासाठी सर्वोत्तम आरोग्य सेवा देतो.",
+                services: [
+                    {n:"ईसीजी", i:"fa-heartbeat"}, {n:"बालरोग", i:"fa-baby"}, 
+                    {n:"होमिओपॅथी", i:"fa-leaf"}, {n:"शस्त्रक्रिया", i:"fa-procedures"}, 
+                    {n:"लॅब चाचणी", i:"fa-vial"}, {n:"नेब्युलायझेशन", i:"fa-lungs"}, {n:"शुगर तपासणी", i:"fa-tint"}
+                ],
+                feedbacks: [
+                    "उत्कृष्ट उपचार आणि अतिशय अनुभवी डॉक्टर. डॉ. टाकळे खूप मदत करतात.",
+                    "अतिशय स्वच्छ क्लिनिक आणि परिसरातील सर्वोत्तम होमिओपॅथी उपचार.",
+                    "त्वरित सेवा आणि अचूक निदान. कुटुंबांसाठी उत्तम पर्याय.",
+                    "डॉक्टर शांतपणे ऐकून घेतात आणि प्रभावी वैद्यकीय सेवा देतात.",
+                    "दिलेली औषधे आणि डॉक्टरांचा सल्ला यामुळे मला खूप लवकर आराम मिळाला."
+                ]
+            }
+        };
+
+        function updateLang(lang) {
+            document.querySelectorAll('.lang-nav button').forEach(b => b.classList.remove('active'));
+            document.getElementById('btn-' + lang).classList.add('active');
+            
+            document.querySelectorAll('[data-key]').forEach(el => {
+                const key = el.getAttribute('data-key');
+                if(translations[lang][key]) el.innerText = translations[lang][key];
+            });
+
+            const fGrid = document.getElementById('facility-grid');
+            fGrid.innerHTML = translations[lang].services.map(s => `
+                <div class="f-card-item">
+                    <i class="fas ${s.i}"></i>
+                    <span>${s.n}</span>
+                </div>
+            `).join('');
+
+            const fTrack = document.getElementById('feedback-track');
+            const feedbackHTML = translations[lang].feedbacks.map(f => `
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"${f}"</p>
+                    <strong>- Verified Patient</strong>
+                </div>
+            `).join('');
+            fTrack.innerHTML = feedbackHTML + feedbackHTML; // Duplicate for smooth loop
+        }
+        window.onload = () => updateLang('en');
+    </script>
 </body>
 </html>
