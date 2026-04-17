@@ -12,9 +12,10 @@
 
     <div class="top-ribbon">
         <div class="container ribbon-flex">
-            <div class="location">
-                <i class="fas fa-map-marker-alt"></i> 
-                <span data-en="Sadguru Clinic, Main Road, Pune" data-mr="सद्गुरु क्लिनिक, मेन रोड, पुणे">Sadguru Clinic, Main Road, Pune</span>
+            <div class="ribbon-left">
+                <span><i class="fas fa-map-marker-alt"></i> Sadguru Clinic, Pune</span>
+                <span class="sep">|</span>
+                <span><i class="fas fa-clock"></i> 9:00 AM - 11:00 PM</span>
             </div>
             <div class="lang-nav">
                 <button onclick="changeLang('en')" id="btn-en" class="active">EN</button>
@@ -23,81 +24,86 @@
         </div>
     </div>
 
-    <header class="main-header">
+    <header class="mega-header">
         <div class="container header-grid">
-            <div class="logo-box">
-                <div class="logo-main">SADGURU<span>CLINIC</span></div>
-                <small data-en="YOUR HEALTH, OUR PRIORITY" data-mr="तुमचे आरोग्य, आमची प्राथमिकता">YOUR HEALTH, OUR PRIORITY</small>
-            </div>
-            
-            <div class="header-details">
-                <div class="detail-item">
-                    <i class="far fa-clock"></i>
-                    <div>
-                        <strong data-en="9 AM - 11 PM" data-mr="सकाळी ९ - रात्री ११">9 AM - 11 PM</strong>
-                        <span data-en="Open Daily" data-mr="दररोज उघडे">Open Daily</span>
+            <div class="brand">
+                <div class="logo-wrap">
+                    <div class="logo-icon"><i class="fas fa-heartbeat"></i></div>
+                    <div class="logo-text">
+                        <h1>SADGURU<span>CLINIC</span></h1>
+                        <p>QUALITY HEALTHCARE</p>
                     </div>
                 </div>
-                <a href="tel:9923889819" class="header-call-btn">
+            </div>
+
+            <div class="doctor-presence">
+                <div class="doc-card-header">
+                    <strong>Dr. Dnyanesh Takle</strong>
+                    <span>CCMP, BHMS, PGDEMS</span>
+                </div>
+                <div class="doc-card-header">
+                    <strong>Dr. Prajakta Takle</strong>
+                    <span>BHMS</span>
+                </div>
+            </div>
+
+            <div class="header-action">
+                <a href="tel:9923889819" class="call-pill">
                     <i class="fas fa-phone-alt"></i>
-                    <span>99238 89819</span>
+                    <div><small>Call Now</small><strong>99238 89819</strong></div>
                 </a>
             </div>
         </div>
     </header>
 
-    <nav class="desktop-nav">
-        <div class="container nav-links">
-            <a href="#services"><i class="fas fa-stethoscope"></i> <span data-en="Services" data-mr="सेवा">Services</span></a>
-            <a href="#lab"><i class="fas fa-microscope"></i> <span data-en="Lab Tests" data-mr="लॅब">Lab Tests</span></a>
-            <a href="#doctors"><i class="fas fa-user-md"></i> <span data-en="Our Doctors" data-mr="डॉक्टर">Our Doctors</span></a>
-            <a href="https://wa.me/919923889819" class="wa-btn-desktop"><i class="fab fa-whatsapp"></i> Chat Now</a>
+    <div class="service-ticker">
+        <div class="ticker-track">
+            <span>✦ NEBULIZATION</span><span>✦ SUGAR & BP CHECK</span><span>✦ CHILD VACCINATION</span><span>✦ MINOR SURGERY</span><span>✦ ECG</span><span>✦ HOMEOPATHY</span>
+            <span>✦ NEBULIZATION</span><span>✦ SUGAR & BP CHECK</span><span>✦ CHILD VACCINATION</span><span>✦ MINOR SURGERY</span><span>✦ ECG</span><span>✦ HOMEOPATHY</span>
         </div>
-    </nav>
+    </div>
 
-    <section class="hero-premium">
-        <div class="container hero-layout">
-            <div class="hero-text">
-                <h1 data-en="Expert Medical Care You Can Trust" data-mr="विश्वासार्ह वैद्यकीय सेवा">Expert Medical Care You Can Trust</h1>
-                <div class="doctor-profiles">
-                    <div class="doc-card">
-                        <strong>Dr. Dnyanesh Takle</strong>
-                        <p>CCMP, BHMS, PGDEMS</p>
-                        <small data-en="Physician & Surgeon" data-mr="फिजिशियन आणि सर्जन">Physician & Surgeon</small>
-                    </div>
-                    <div class="doc-card">
-                        <strong>Dr. Prajakta Takle</strong>
-                        <p>BHMS</p>
-                        <small data-en="General Physician" data-mr="जनरल फिजिशियन">General Physician</small>
-                    </div>
+    <section class="feedback-section">
+        <div class="container feedback-layout">
+            <div class="feedback-intro">
+                <h2>What Our Patients Say</h2>
+                <p>Over 5,000+ happy families treated. We take pride in our patient care and recovery rates.</p>
+                <div class="trust-badge">
+                    <i class="fas fa-star"></i> 4.9/5 Rating on Google
+                </div>
+            </div>
+            
+            <div class="feedback-slider-box">
+                <div class="feedback-track">
+                    <div class="f-card"><strong>★★★★★</strong><p>Very good treatment for my child.</p><span>- Rahul S.</span></div>
+                    <div class="f-card"><strong>★★★★★</strong><p>Dr. Dnyanesh explains everything very calmly.</p><span>- Amit P.</span></div>
+                    <div class="f-card"><strong>★★★★★</strong><p>Clinic is very clean and hygienic.</p><span>- Sneha M.</span></div>
+                    <div class="f-card"><strong>★★★★★</strong><p>Best family doctor in this area.</p><span>- Vikas J.</span></div>
+                    <div class="f-card"><strong>★★★★★</strong><p>Reasonable charges and great care.</p><span>- Priya K.</span></div>
+                    <div class="f-card"><strong>★★★★★</strong><p>Open till 11 PM, very helpful in emergency.</p><span>- Santosh D.</span></div>
+                    <div class="f-card"><strong>★★★★★</strong><p>Lab test results were very fast.</p><span>- Mahesh T.</span></div>
+                    <div class="f-card"><strong>★★★★★</strong><p>Homeopathy treatment worked for my skin issue.</p><span>- Anjali R.</span></div>
+                    <div class="f-card"><strong>★★★★★</strong><p>Highly professional doctors.</p><span>- Omkar B.</span></div>
+                    <div class="f-card"><strong>★★★★★</strong><p>Proper diagnosis and effective medicine.</p><span>- Kavita G.</span></div>
+                    <div class="f-card"><strong>★★★★★</strong><p>Very polite staff and great atmosphere.</p><span>- Suresh L.</span></div>
+                    <div class="f-card"><strong>★★★★★</strong><p>Nebulization helped my son instantly.</p><span>- Pooja H.</span></div>
+                    <div class="f-card"><strong>★★★★★</strong><p>Regular sugar checkup here is very easy.</p><span>- Ganpat W.</span></div>
+                    <div class="f-card"><strong>★★★★★</strong><p>Dr. Prajakta is excellent with infants.</p><span>- Manisha P.</span></div>
+                    <div class="f-card"><strong>★★★★★</strong><p>Safe and trustworthy for women health.</p><span>- Sunita Y.</span></div>
+                    <div class="f-card"><strong>★★★★★</strong><p>I recovered from Typhoid very quickly.</p><span>- Rohit N.</span></div>
+                    <div class="f-card"><strong>★★★★★</strong><p>Modern equipment and clean surroundings.</p><span>- Bablu S.</span></div>
+                    <div class="f-card"><strong>★★★★★</strong><p>Best clinic for senior citizens.</p><span>- Vitthal K.</span></div>
+                    <div class="f-card"><strong>★★★★★</strong><p>Effective treatment for chronic cough.</p><span>- Sagar A.</span></div>
+                    <div class="f-card"><strong>★★★★★</strong><p>Great experience every time we visit.</p><span>- Kiran D.</span></div>
+                    <div class="f-card"><strong>★★★★★</strong><p>Very good treatment for my child.</p><span>- Rahul S.</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="mobile-bottom-nav">
-        <a href="tel:9923889819" class="mob-nav-item">
-            <i class="fas fa-phone"></i>
-            <span data-en="Call" data-mr="कॉल">Call</span>
-        </a>
-        <a href="https://wa.me/919923889819" class="mob-nav-item chat-highlight">
-            <i class="fab fa-whatsapp"></i>
-            <span data-en="Chat Now" data-mr="चॅट करा">Chat Now</span>
-        </a>
-        <a href="#services" class="mob-nav-item">
-            <i class="fas fa-th-large"></i>
-            <span data-en="Services" data-mr="सेवा">Services</span>
-        </a>
-    </div>
+    <a href="https://wa.me/919923889819" class="wa-float-pill">
+        <i class="fab fa-whatsapp"></i> <span>Chat Now</span>
+    </a>
 
-    <script>
-        function changeLang(lang) {
-            document.querySelectorAll('.lang-nav button').forEach(b => b.classList.remove('active'));
-            document.getElementById('btn-' + lang).classList.add('active');
-            document.querySelectorAll('[data-en]').forEach(el => {
-                el.innerText = el.getAttribute('data-' + lang);
-            });
-        }
-    </script>
 </body>
 </html>
