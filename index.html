@@ -2,156 +2,220 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Sadguru Clinic | Dr. Dnyanesh Takle</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Sadguru Hospital & LifeCare Pharmacy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        :root { --primary: #00a88f; --secondary: #1a5c96; }
+        .text-teal-brand { color: var(--primary); }
+        .bg-teal-brand { background-color: var(--primary); }
+        .lang-hidden { display: none; }
+        html { scroll-behavior: smooth; }
+        .nav-link { transition: all 0.3s ease; border-bottom: 2px solid transparent; padding-bottom: 4px; cursor: pointer; }
+        .nav-link:hover { color: var(--primary); border-bottom: 2px solid var(--primary); }
+    </style>
 </head>
-<body>
+<body id="home" class="bg-white font-sans text-slate-800">
 
-    <div class="top-ribbon">
-        <div class="container ribbon-flex">
-            <div class="ribbon-left">
-                <span><i class="fas fa-map-marker-alt"></i> Sadguru Clinic, Pune</span>
-                <span class="sep">|</span>
-                <span><i class="fas fa-clock"></i> 9:00 AM - 11:00 PM</span>
-            </div>
-            <div class="lang-nav">
-                <button onclick="updateLang('en')" id="btn-en" class="active">EN</button>
-                <button onclick="updateLang('mr')" id="btn-mr">मराठी</button>
-            </div>
+    <div class="bg-slate-100 border-b border-slate-200 py-2 px-6 flex justify-between items-center text-[11px] font-bold">
+        <div class="flex items-center gap-6">
+            <a href="tel:9689969058" class="flex items-center gap-2 text-teal-brand hover:text-slate-900 transition">
+                <i class="fas fa-pills text-sm"></i> PHARMACY: 96899 69058
+            </a>
+            <span class="hidden md:inline text-slate-300">|</span>
+            <span class="hidden md:inline text-slate-500 uppercase tracking-widest">
+                <i class="fas fa-clock text-teal-brand"></i> 9:00 AM — 11:00 PM
+            </span>
+        </div>
+        <div class="flex bg-white rounded-lg border border-slate-200 overflow-hidden shadow-sm">
+            <button onclick="setLanguage('en')" id="btn-en" class="px-3 py-1 bg-teal-brand text-white transition">English</button>
+            <button onclick="setLanguage('mr')" id="btn-mr" class="px-3 py-1 hover:bg-slate-50 transition text-slate-600">मराठी</button>
         </div>
     </div>
 
-    <header class="mega-header">
-        <div class="container header-grid">
-            <div class="brand">
-                <div class="logo-wrap">
-                    <div class="logo-icon"><i class="fas fa-heartbeat"></i></div>
-                    <div class="logo-text">
-                        <h1>SADGURU<span>CLINIC</span></h1>
-                        <p>QUALITY HEALTHCARE</p>
-                    </div>
+    <nav class="bg-white/95 backdrop-blur-md sticky top-0 z-50 border-b border-slate-100 shadow-sm">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="flex items-center gap-4 group">
+                <div class="w-12 h-12 bg-teal-brand rounded-xl shadow-lg flex items-center justify-center text-white group-hover:scale-105 transition">
+                    <i class="fas fa-hand-holding-medical text-2xl"></i>
                 </div>
-            </div>
-            <div class="doctor-presence">
-                <div class="doc-badge">
-                    <strong>Dr. Dnyanesh Takle</strong>
-                    <span>BHMS, PGDEMS, CCMP</span>
+                <div>
+                    <h1 class="text-xl font-black text-slate-900 leading-none uppercase">Shree Sadguru</h1>
+                    <p class="text-[10px] tracking-[0.2em] text-teal-brand font-black uppercase mt-1">Hospital & Pharmacy</p>
                 </div>
-                <div class="doc-badge">
-                    <strong>Dr. Prajakta Jadhav-Takle</strong>
-                    <span>BHMS, General Physician</span>
-                </div>
-            </div>
-            <div class="header-action">
-                <a href="tel:9923889819" class="call-pill">
-                    <i class="fas fa-phone-alt"></i>
-                    <div><small>Call Now</small><strong>99238 89819</strong></div>
+            </a>
+
+            <div class="hidden lg:flex items-center gap-8 font-bold text-slate-600 text-[11px] uppercase tracking-widest">
+                <a href="#all-services" class="nav-link"><span class="lang-en">Services</span><span class="lang-mr lang-hidden">सेवा</span></a>
+                <a href="#doctors" class="nav-link"><span class="lang-en">Doctors</span><span class="lang-mr lang-hidden">डॉक्टर</span></a>
+                <a href="#pharmacy" class="nav-link"><span class="lang-en">Pharmacy</span><span class="lang-mr lang-hidden">फार्मसी</span></a>
+                <a href="#location" class="nav-link"><span class="lang-en">Location</span><span class="lang-mr lang-hidden">पत्ता</span></a>
+                
+                <a href="tel:9923889819" class="bg-teal-brand text-white px-6 py-2.5 rounded-full shadow-md hover:scale-105 transition">
+                    <span class="lang-en">Emergency Call</span><span class="lang-mr lang-hidden">आणीबाणी कॉल</span>
                 </a>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <section class="facility-section">
-        <div class="container">
-            <h3 class="section-title" data-key="our-facilities">Our Medical Facilities</h3>
-            <div class="facility-grid" id="facility-grid">
+    <section class="py-20 bg-gradient-to-b from-slate-50 to-white">
+        <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8">
+                <h2 class="text-5xl lg:text-7xl font-black text-slate-900 leading-tight">
+                    <span class="lang-en">Care You Can <br><span class="text-teal-brand">Trust.</span></span>
+                    <span class="lang-mr lang-hidden">विश्वासार्ह <br><span class="text-teal-brand">आरोग्य सेवा.</span></span>
+                </h2>
+                <div class="flex flex-wrap gap-4">
+                    <a href="tel:9923889819" class="bg-slate-900 text-white p-5 rounded-2xl shadow-xl flex items-center gap-4 hover:bg-teal-brand transition group">
+                        <i class="fas fa-user-md text-2xl text-teal-brand group-hover:text-white"></i>
+                        <div class="text-left">
+                            <p class="text-[10px] font-black uppercase opacity-60">Hospital</p>
+                            <p class="font-bold text-sm lang-en">Doctor Home Visit</p>
+                            <p class="font-bold text-sm lang-mr lang-hidden">डॉक्टर होम व्हिजिट</p>
+                        </div>
+                    </a>
+                    <a href="tel:9689969058" class="bg-white border-2 border-slate-100 p-5 rounded-2xl shadow-sm flex items-center gap-4 hover:border-teal-brand transition">
+                        <i class="fas fa-truck text-2xl text-teal-brand"></i>
+                        <div class="text-left">
+                            <p class="text-[10px] font-black uppercase opacity-60">LifeCare</p>
+                            <p class="font-bold text-sm lang-en">Pharmacy Order</p>
+                            <p class="font-bold text-sm lang-mr lang-hidden">फार्मसी ऑर्डर</p>
+                        </div>
+                    </a>
                 </div>
+            </div>
+            <div class="relative"><img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800" class="rounded-[4rem] shadow-2xl"></div>
         </div>
     </section>
 
-    <section class="feedback-section">
-        <div class="container feedback-wrapper">
-            <div class="feedback-intro">
-                <h2 data-key="feedback-title">What Our Patients Say</h2>
-                <div class="accent-line"></div>
-                <p data-key="feedback-sub">Trusted by 5,000+ happy patients. We offer the best healthcare for you and your family.</p>
-                <div class="rating-badge">
-                    <span class="rating-num">4.9</span>
-                    <div class="stars">★★★★★</div>
-                    <small>Google Rating</small>
-                </div>
+    <section id="all-services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-black text-slate-900 uppercase">
+                    <span class="lang-en">Comprehensive Clinical Services</span>
+                    <span class="lang-mr lang-hidden">सर्वसमावेशक वैद्यकीय सेवा</span>
+                </h2>
+                <div class="h-1 bg-teal-brand w-20 mx-auto mt-4 rounded-full"></div>
             </div>
-            
-            <div class="feedback-view">
-                <div id="feedback-track" class="feedback-track">
-                    </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-slate-50 p-6 rounded-2xl flex items-center gap-4 border border-slate-100">
+                    <i class="fas fa-user-md text-teal-brand"></i>
+                    <p class="font-bold lang-en">General Physician & Surgery</p>
+                    <p class="font-bold lang-mr lang-hidden">जनरल फिजिशियन आणि सर्जरी</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl flex items-center gap-4 border border-slate-100">
+                    <i class="fas fa-virus text-teal-brand"></i>
+                    <p class="font-bold lang-en">Dengue & Fever Treatment</p>
+                    <p class="font-bold lang-mr lang-hidden">डेंग्यू आणि ताप उपचार</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl flex items-center gap-4 border border-slate-100">
+                    <i class="fas fa-heartbeat text-teal-brand"></i>
+                    <p class="font-bold lang-en">Hypertension (High BP) Care</p>
+                    <p class="font-bold lang-mr lang-hidden">हायपरटेन्शन (रक्तदाब) काळजी</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl flex items-center gap-4 border border-slate-100">
+                    <i class="fas fa-allergies text-teal-brand"></i>
+                    <p class="font-bold lang-en">Skin & Fungal Problems</p>
+                    <p class="font-bold lang-mr lang-hidden">त्वचा आणि बुरशीजन्य समस्या</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl flex items-center gap-4 border border-slate-100">
+                    <i class="fas fa-scissors text-teal-brand"></i>
+                    <p class="font-bold lang-en">Hairfall Treatment</p>
+                    <p class="font-bold lang-mr lang-hidden">केस गळतीवर उपचार</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl flex items-center gap-4 border border-slate-100">
+                    <i class="fas fa-venus text-teal-brand"></i>
+                    <p class="font-bold lang-en">Gynaecological Problems</p>
+                    <p class="font-bold lang-mr lang-hidden">स्त्रीरोग समस्या</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl flex items-center gap-4 border border-slate-100">
+                    <i class="fas fa-baby text-teal-brand"></i>
+                    <p class="font-bold lang-en">Paediatric Treatment</p>
+                    <p class="font-bold lang-mr lang-hidden">बालरोग उपचार</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl flex items-center gap-4 border border-slate-100">
+                    <i class="fas fa-biohazard text-teal-brand"></i>
+                    <p class="font-bold lang-en">Renal (Kidney) Stone Care</p>
+                    <p class="font-bold lang-mr lang-hidden">मुतखडा उपचार</p>
+                </div>
+                <div class="bg-slate-50 p-6 rounded-2xl flex items-center gap-4 border border-slate-100">
+                    <i class="fas fa-house-user text-teal-brand"></i>
+                    <p class="font-bold lang-en">24/7 Doctor Home Visits</p>
+                    <p class="font-bold lang-mr lang-hidden">२४/७ डॉक्टर होम व्हिजिट</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <a href="https://wa.me/919923889819" class="wa-float">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <section id="doctors" class="py-20 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+                <div class="bg-white p-10 rounded-[3rem] text-center shadow-sm">
+                    <h3 class="text-2xl font-black text-slate-800">Dr. Dnyanesh Takle</h3>
+                    <p class="text-teal-brand font-black text-xs mt-2 uppercase">CCMP, BHMS, PGDEMS</p>
+                    <p class="mt-4 text-slate-600 font-bold lang-en">General Physician & Surgeon</p>
+                    <p class="mt-4 text-slate-600 font-bold lang-mr lang-hidden">जनरल फिजिशियन आणि सर्जन</p>
+                </div>
+                <div class="bg-white p-10 rounded-[3rem] text-center shadow-sm">
+                    <h3 class="text-2xl font-black text-slate-800">Dr. Prajakta Takle</h3>
+                    <p class="text-teal-brand font-black text-xs mt-2 uppercase">BHMS</p>
+                    <p class="mt-4 text-slate-600 font-bold lang-en">General Physician</p>
+                    <p class="mt-4 text-slate-600 font-bold lang-mr lang-hidden">जनरल फिजिशियन</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pharmacy" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="bg-slate-50 rounded-[4rem] p-12 md:p-20 flex flex-col md:flex-row items-center gap-16 border border-slate-100">
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl font-black text-slate-900 lang-en">LifeCare Pharmacy</h2>
+                    <h2 class="text-4xl font-black text-slate-900 lang-mr lang-hidden">लाइफकेअर फार्मसी</h2>
+                    <p class="mt-4 text-slate-500 font-medium text-lg lang-en">Authentic medicine delivery across Hinjewadi.</p>
+                    <p class="mt-4 text-slate-500 font-medium text-lg lang-mr lang-hidden">हिंजवडीमध्ये औषधांची घरपोच डिलिव्हरी.</p>
+                    <p class="mt-6 text-slate-500 font-medium text-lg">Order: <a href="tel:9689969058" class="text-teal-brand font-black">96899 69058</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="location" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-black text-slate-900 uppercase mb-8">Visit Us</h2>
+                    <p class="text-slate-600 font-bold">Shop No 9, Sakhare Vasti Rd, Phase 1, Hinjawadi, Pune 411057</p>
+                    <a href="https://maps.google.com/?q=Sadguru+Clinic+Hinjewadi" target="_blank" class="mt-8 inline-block bg-slate-900 text-white px-10 py-4 rounded-full font-bold">GET DIRECTIONS</a>
+                </div>
+                <div class="h-[400px] rounded-[3rem] overflow-hidden shadow-2xl">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.3533411440815!2d73.729910414893!3d18.591014187368593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bbddfed263f3%3A0x3c2c0e14dec9b1fd!2sSADGURU%20CLINIC!5e0!3m2!1sen!2sin!4v1650186000000!5m2!1sen!2sin" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white py-12 border-t border-slate-200">
+        <div class="text-center">
+            <h4 class="text-lg font-black text-slate-900 mb-2 uppercase tracking-widest">Shree Sadguru Hospital & Pharmacy</h4>
+            <p class="text-slate-500 text-[10px] font-black tracking-[0.4em] uppercase">© 2026 Hinjawadi Phase 1, Pune</p>
+        </div>
+    </footer>
 
     <script>
-        const translations = {
-            en: {
-                "our-facilities": "Our Medical Facilities",
-                "feedback-title": "What Our Patients Say",
-                "feedback-sub": "Trusted by 5,000+ happy patients. We offer the best healthcare for you and your family.",
-                services: [
-                    {n:"ECG", i:"fa-heartbeat"}, {n:"Child Care", i:"fa-baby"}, 
-                    {n:"Homeopathy", i:"fa-leaf"}, {n:"Surgery", i:"fa-procedures"}, 
-                    {n:"Lab Tests", i:"fa-vial"}, {n:"Nebulization", i:"fa-lungs"}, {n:"Sugar Check", i:"fa-tint"}
-                ],
-                feedbacks: [
-                    "Excellent treatment and very professional doctors. Dr. Takle is very helpful.",
-                    "Very clean clinic and the best homeopathic treatment in the area.",
-                    "Prompt service and accurate diagnosis. Highly recommended for families.",
-                    "The doctors listen patiently and provide effective medical care.",
-                    "I am very satisfied with the consultation and medicine provided."
-                ]
-            },
-            mr: {
-                "our-facilities": "आमच्या वैद्यकीय सुविधा",
-                "feedback-title": "रुग्णांचे अभिप्राय",
-                "feedback-sub": "५,०००+ हून अधिक समाधानी रुग्ण. आम्ही तुमच्या कुटुंबासाठी सर्वोत्तम आरोग्य सेवा देतो.",
-                services: [
-                    {n:"ईसीजी", i:"fa-heartbeat"}, {n:"बालरोग", i:"fa-baby"}, 
-                    {n:"होमिओपॅथी", i:"fa-leaf"}, {n:"शस्त्रक्रिया", i:"fa-procedures"}, 
-                    {n:"लॅब चाचणी", i:"fa-vial"}, {n:"नेब्युलायझेशन", i:"fa-lungs"}, {n:"शुगर तपासणी", i:"fa-tint"}
-                ],
-                feedbacks: [
-                    "उत्कृष्ट उपचार आणि अतिशय अनुभवी डॉक्टर. डॉ. टाकळे खूप मदत करतात.",
-                    "अतिशय स्वच्छ क्लिनिक आणि परिसरातील सर्वोत्तम होमिओपॅथी उपचार.",
-                    "त्वरित सेवा आणि अचूक निदान. कुटुंबांसाठी उत्तम पर्याय.",
-                    "डॉक्टर शांतपणे ऐकून घेतात आणि प्रभावी वैद्यकीय सेवा देतात.",
-                    "दिलेली औषधे आणि डॉक्टरांचा सल्ला यामुळे मला खूप लवकर आराम मिळाला."
-                ]
+        function setLanguage(lang) {
+            const enEls = document.querySelectorAll('.lang-en'), mrEls = document.querySelectorAll('.lang-mr');
+            const bEn = document.getElementById('btn-en'), bMr = document.getElementById('btn-mr');
+            if(lang === 'mr') {
+                enEls.forEach(el => el.classList.add('lang-hidden')); mrEls.forEach(el => el.classList.remove('lang-hidden'));
+                bMr.classList.add('bg-teal-brand', 'text-white'); bEn.classList.remove('bg-teal-brand', 'text-white');
+            } else {
+                enEls.forEach(el => el.classList.remove('lang-hidden')); mrEls.forEach(el => el.classList.add('lang-hidden'));
+                bEn.classList.add('bg-teal-brand', 'text-white'); bMr.classList.remove('bg-teal-brand', 'text-white');
             }
-        };
-
-        function updateLang(lang) {
-            document.querySelectorAll('.lang-nav button').forEach(b => b.classList.remove('active'));
-            document.getElementById('btn-' + lang).classList.add('active');
-            
-            document.querySelectorAll('[data-key]').forEach(el => {
-                const key = el.getAttribute('data-key');
-                if(translations[lang][key]) el.innerText = translations[lang][key];
-            });
-
-            const fGrid = document.getElementById('facility-grid');
-            fGrid.innerHTML = translations[lang].services.map(s => `
-                <div class="f-card-item">
-                    <i class="fas ${s.i}"></i>
-                    <span>${s.n}</span>
-                </div>
-            `).join('');
-
-            const fTrack = document.getElementById('feedback-track');
-            const feedbackHTML = translations[lang].feedbacks.map(f => `
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"${f}"</p>
-                    <strong>- Verified Patient</strong>
-                </div>
-            `).join('');
-            fTrack.innerHTML = feedbackHTML + feedbackHTML; // Duplicate for smooth loop
         }
-        window.onload = () => updateLang('en');
     </script>
 </body>
 </html>
